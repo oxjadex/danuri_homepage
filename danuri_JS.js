@@ -27,3 +27,12 @@ async=""; src="https://www.googletagmanager.com/gtag/js?id=G-2FKTFX2RDK";
   gtag('js', new Date());
 
   gtag('config', 'G-2FKTFX2RDK');
+
+
+	$('.js-click-modal').click(function(){
+	  $('.container').addClass('modal-open');
+	});
+
+	$('.js-close-modal').click(function(){
+	  $('.container').removeClass('modal-open');
+	});
