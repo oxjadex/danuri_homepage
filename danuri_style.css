@@ -26,7 +26,7 @@ body {
     top: 0px;
     position: absolute;
     background-color: rgba(0, 0, 0, 0);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5); /* 반투명한 흰색 테두리 설정 */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4); /* 반투명한 흰색 테두리 설정 */
     box-sizing: border-box; /* 테두리를 요소의 크기에 포함시키도록 설정 */
 }
 
@@ -86,10 +86,44 @@ a {
     font-size: 50px;
     line-height: 1.6;
     color:white;
-    margin-top: 470px;
+    margin-top: 300px;
     margin-left: 100px;
     font-weight: 800;
 }
 .yellow {
     color:yellow;
+}
+
+#bottombar {
+    margin-top: 40px;
+    margin-left: 30px;
+    background-color: rgba( 0, 0, 0, 0.5);
+    height: 180px;
+    width: 1410px;
+}
+#current-date {
+    font-family: 'Nanum Gothic', cursive;
+    font-size: 25px;
+    color: white;
+    margin-bottom: 100px;
+    position: relative;
+    left: 50px;
+    bottom: 30px;
+}
+#current-time {
+    font-family: 'Nanum Gothic', cursive;
+    font-size: 25px;
+    color: white;
+    position: relative;
+    left: 270px;
+    bottom: 158.5px;
+}
+#text {
+    font-family: 'Nanum Gothic', cursive;
+    font-size: 16px;
+    color: #c1d7e9;
+    margin-bottom: 100px;
+    position: relative;
+    top: 50px;
+    left: 50px;
 }

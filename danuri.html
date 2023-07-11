@@ -45,5 +45,43 @@
         <div class="yellow">다누리</div>
         <div class="white">140여일 간의 여정, 달과 조우하다</div>
     </div>
+    <div id="bottombar">
+        <div id="text">현재 시간 GMT+0900 (한국 표준시)</div>
+        <div id="current-date"></div>
+        <div id="current-time"></div>
+    </div>
+    
+    <script>
+        // 현재 시간 및 날짜 업데이트 함수
+        function updateCurrentDateTime() {
+            var currentDateElement = document.getElementById('current-date');
+            var currentTimeElement = document.getElementById('current-time');
+            var currentDateTime = new Date();
+            var year = currentDateTime.getFullYear();
+            var month = currentDateTime.getMonth() + 1;
+            var date = currentDateTime.getDate();
+            var hours = currentDateTime.getHours();
+            var minutes = currentDateTime.getMinutes();
+            var seconds = currentDateTime.getSeconds();
+    
+            // 시, 분, 초를 두 자리로 표시하기 위해 앞에 0 추가
+            month = (month < 10 ? '0' : '') + month;
+            date = (date < 10 ? '0' : '') + date;
+            hours = (hours < 10 ? '0' : '') + hours;
+            minutes = (minutes < 10 ? '0' : '') + minutes;
+            seconds = (seconds < 10 ? '0' : '') + seconds;
+    
+            // 현재 날짜와 시간을 요소에 설정
+            currentDateElement.textContent = year + '년 ' + month + '월 ' + date + '일';
+            currentTimeElement.textContent = hours + ':' + minutes + ':' + seconds;
+    
+            // 1초마다 현재 시간 및 날짜 업데이트
+            setTimeout(updateCurrentDateTime, 1000);
+        }
+    
+        // 페이지 로드 시 현재 시간 및 날짜 업데이트 함수 호출
+        window.onload = updateCurrentDateTime;
+    </script>
+    
 </body>
 </html>
