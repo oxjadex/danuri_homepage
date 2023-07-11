@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="danuri_style.css"/>
-    <script src="danuri_JS.js"></script>
     <title>information</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
@@ -22,41 +21,48 @@
         }
         #loadingBox {
             position: relative;
+            width: 200px;
+            height: 200px;
         }
         #dim {
             position: absolute;
             top: 0;
             left: 0;
+            transform-origin: center center; /* 중심점 설정 */
         }
-            
     </style>
     <script>
-        var container = document.getElementById('loadingBox');
-        var image = document.getElementById('dim');
+        window.addEventListener('DOMContentLoaded', (event) => {
+            var container = document.getElementById('loadingBox');
+            var image = document.querySelector('#dim img');
 
-        var centerX = container.offsetWidth / 2;
-        var centerY = container.offsetHeight / 2;
-        var radius = 100; // 반지름
-        var angle = 0; // 초기 각도
+            if (container && image) {
+                var centerX = container.offsetWidth / 2;
+                var centerY = container.offsetHeight / 2;
+                var radius = 100; // 반지름
+                var angle = 0; // 초기 각도
 
-        function animate() {
-        // 이미지의 위치 계산
-        var x = centerX + Math.cos(angle) * radius;
-        var y = centerY + Math.sin(angle) * radius;
-        
-        // 이미지 위치 설정
-        image.style.left = x + 'px';
-        image.style.top = y + 'px';
-        
-        // 각도 증가
-        angle += 0.01; // 적절한 속도 조절
-        
-        // 애니메이션 프레임 요청
-        requestAnimationFrame(animate);
-        }
+                function animate() {
+                    // 이미지의 위치 계산
+                    var x = centerX + Math.cos(angle) * radius;
+                    var y = centerY + Math.sin(angle) * radius;
 
-        // 애니메이션 시작
-        animate();
+                    // 이미지 위치 및 회전 설정
+                    image.style.left = x + 'px';
+                    image.style.top = y + 'px';
+                    image.style.transform = 'rotate(' + angle + 'deg)'; // 회전 각도 설정
+
+                    // 각도 증가
+                    angle += 1; // 회전 속도 조절
+
+                    // 애니메이션 프레임 요청
+                    requestAnimationFrame(animate);
+                }
+
+                // 애니메이션 시작
+                animate();
+            }
+        });
     </script>
 </head>
 <body>
@@ -76,8 +82,8 @@
     <div id="introduce">한국 최초 달 탐사선</div>
     <div class="quick_area2">
         <div id="loadingBox">
-            <div class="dim"><img class="danuri_ro" src=".vscode/danuriShip2.png" alt=""></div>     
-            <img id="back" src=".vscode/img_2.jpg" alt="">
+            <div class="dim"><img class="danuri_ro" src="danuriShip2.png" alt=""></div>     
+            <img id="back" src="img_2.jpg" alt="">
         </div>   
     </div>
 </body>

@@ -23,15 +23,15 @@
 </head>
 <body>
     <div id="container">
-    <img id="image" src="path/to/your/image.jpg" alt="Image">
+    <img id="image" src="./danuriShip2.png" alt="Image">
   </div>
   <script>
     var container = document.getElementById('container');
     var image = document.getElementById('image');
 
-    var centerX = container.offsetWidth / 2;
-    var centerY = container.offsetHeight / 2;
-    var radius = 100; // 반지름
+    var centerX = container.offsetWidth / 2 - 100;
+    var centerY = container.offsetHeight / 2 + 435;
+    var radius = 250; // 반지름
     var angle = 0; // 초기 각도
 
     function animate() {
@@ -54,6 +54,7 @@
     animate();
 
   </script>
+  <img src="img_2.jpg" alt="">
 </body>
 </html>
   
