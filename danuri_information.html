@@ -1,90 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <link rel="stylesheet" href="danuri_style.css"/>
     <title>information</title>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
-        body {
-            background-image: url('danuri_look.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
+        #container {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
         }
-        #introduce {
-            font-family: 'Nanum Gothic', cursive;
-            color: white;
-            font-size: 40px;
-            font-weight: 500;
-            line-height:1.6;
-            margin-top: 600px;
-            margin-left: 100px;
+
+        #image {
+        position: absolute;
+        top: 0;
+        left: 0;
         }
-        #loadingBox {
-            position: relative;
-            width: 200px;
-            height: 200px;
+        #wrap {
+          position: relative;
         }
-        #dim {
-            position: absolute;
-            top: 0;
-            left: 0;
-            transform-origin: center center; /* 중심점 설정 */
+        .danuri_img {
+          width: 100%;
+          margin-top:60px;
+        }
+        .introduce {
+          font-family: 'Nanum Gothic', cursive;
+          margin-top: 1px;
+          color: white;
+          font-weight: 900px;
+          font-size: 36px;
+          position: absolute;
+          top: 75%;
+          left: 15%;
+        }
+        #round {
+          margin-top: -330px;
+          width: 100%;
         }
     </style>
-    <script>
-        window.addEventListener('DOMContentLoaded', (event) => {
-            var container = document.getElementById('loadingBox');
-            var image = document.querySelector('#dim img');
-
-            if (container && image) {
-                var centerX = container.offsetWidth / 2;
-                var centerY = container.offsetHeight / 2;
-                var radius = 100; // 반지름
-                var angle = 0; // 초기 각도
-
-                function animate() {
-                    // 이미지의 위치 계산
-                    var x = centerX + Math.cos(angle) * radius;
-                    var y = centerY + Math.sin(angle) * radius;
-
-                    // 이미지 위치 및 회전 설정
-                    image.style.left = x + 'px';
-                    image.style.top = y + 'px';
-                    image.style.transform = 'rotate(' + angle + 'deg)'; // 회전 각도 설정
-
-                    // 각도 증가
-                    angle += 1; // 회전 속도 조절
-
-                    // 애니메이션 프레임 요청
-                    requestAnimationFrame(animate);
-                }
-
-                // 애니메이션 시작
-                animate();
-            }
-        });
-    </script>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header">
-              <div class="menubar"></div>
-                <div class="blue">
-                    <a href="to_the_moon.html" class="moon">달로의 여행</a>
-                    <a href="danuri_information.html" class="info">다누리</a>
-                    <a href="picture_video.html" class="pv">사진&비디오</a>
-                </div>
-                <a href="danuri.html" class="logo">다누리</a>
+  <header>
+    <div class="container">
+        <div class="header">
+            <div class="menubar"></div>
+            <div class="blue">
+                <a href="to_the_moon.html" class="moon">달로의 여행</a>
+                <a href="danuri_information.html" class="info">다누리</a>
+                <a href="picture_video.html" class="pv">사진&비디오</a>                     
             </div>
-          </div>
-    </header>
-    <div id="introduce">한국 최초 달 탐사선</div>
-    <div class="quick_area2">
-        <div id="loadingBox">
-            <div class="dim"><img class="danuri_ro" src="danuriShip2.png" alt=""></div>     
-            <img id="back" src="img_2.jpg" alt="">
-        </div>   
+            <a href="danuri.html" class="logo">다누리</a>
+        </div>
     </div>
+</header>
+    <div id="wrap">
+      <img class="danuri_img" src="danuri_look.jpg" alt="">
+      <div class="introduce">한국 최초 달 탐사선</div>
+    </div>
+    <div id="container">
+    <img id="image" src="./danuriShip2.png" alt="Image">
+  </div>
+  <script>
+    var container = document.getElementById('container');
+    var image = document.getElementById('image');
+
+    var centerX = container.offsetWidth / 2 -23;
+    var centerY = container.offsetHeight / 2 + 135;
+    var radius = 274; // 반지름
+    var angle = 0; // 초기 각도
+
+    function animate() {
+    // 이미지의 위치 계산
+    var x = centerX + Math.cos(angle) * radius;
+    var y = centerY + Math.sin(angle) * radius;
+    
+    // 이미지 위치 설정
+    image.style.left = x + 'px';
+    image.style.top = y + 'px';
+    
+    // 각도 증가
+    angle += 0.01; // 적절한 속도 조절
+    
+    // 애니메이션 프레임 요청
+    requestAnimationFrame(animate);
+    }
+
+    // 애니메이션 시작
+    animate();
+
+  </script>
+  <img id="round" src="img_2.jpg" alt="">
 </body>
 </html>
+  

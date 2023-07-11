@@ -2,8 +2,70 @@
 <html lang="en">
 <head>
     <title>information</title>
+    <link rel="stylesheet" href="danuri_style.css">
+    <script src="danuri_JS.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+        body {
+            background-image: url('./images.png');
+        }
+        .image {
+            height: auto;
+            width: auto;
+            display: block;
+            margin: 50 auto;
+            padding: 10px;
+        }
+        body {
+            display: flex;
+        }
+        #step {
+            float: left;
+        }
+        #near_moon {
+            float: left;
+        }
+        #moon {
+            float: left;
+        }
+        .title {
+            font-family: 'Nanum Gothic', sans-serif;
+            text-align: center;
+            font-size: 40px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello, pv</h1>
+    <header>
+        <div class="container">
+            <div class="header">
+                <div class="menubar"></div>
+                <div class="blue">
+                    <a href="to_the_moon.html" class="moon">달로의 여행</a>
+                    <a href="danuri_information.html" class="info">다누리</a>
+                    <a href="picture_video.html" class="pv">사진&비디오</a>                     
+                </div>
+                <a href="danuri.html" class="logo">다누리</a>
+            </div>
+        </div>
+    </header>
+    <div id ="step">
+        <div class="title">발사 과정</div>
+        <hr width= 50%;>
+        <img class="image" src="./20220805080246096_다누리를-탑재한-팔콘-9발사체.jpg" alt="Image">
+        <img class="image" src="./20220805093202224_1659655604672.jpg" alt="Image">
+        <img class="image" src="./20220805155941484_0805_1.jpg" alt="Image">
+    </div>
+    <div id ="moon">
+        <div class="title">달</div>
+        <img class="image" src="./20221013162755865_0829_view페이지_이미지.jpg" alt="Image">
+        <img class="image" src="./20230103162955382_(221231)_2022년-12월-31일-다누리가-달-상공-119km에서-촬영한-사진.jpg" alt="Image">
+    </div>
+    <div id ="near_moon">
+        <div class="title">달 착륙</div>
+        <img class="image" src="./20230412121437436_3. 실라르드 엠 크레이터 전체 영상.jpg" alt="Image">
+        <img class="image" src="./20230412121320297_2. 슈뢰딩거 분지 전체 영상.jpg"" alt="Image">
+        <img class="image" src="./20230412121518175_1. 치올콥스키 크레이터 전체 영상.jpg" alt="Image">
+    </div>
 </body>
 </html>
