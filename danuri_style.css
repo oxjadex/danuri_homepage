@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 body {
+    font-family: 'Nanum Gothic', cursive;
     background-image: url('danuri_bg_13.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -21,6 +23,7 @@ body {
 }
 
 .moon {
+    font-family: 'Nanum Gothic', cursive;
     left: 930px;
     top: 29px;
     position: absolute;
@@ -66,14 +69,18 @@ body {
 a {
     text-decoration: none;
 }
-.blue>a:hover {
+.blue > a:hover {
     color: #59A8D9;
 }
 #title {
-    font-size: 100px;
+    font-family: 'Nanum Gothic', cursive;
+    font-size: 50px;
     line-height: 1.6;
-    font-family: "Nanum Gothic", "돋움", Dotum, Helvetica, Verdana, Arial, sans-serif;
-    color: #2c2c2c;
-    margin-top: 400px;
-    font-weight: 100px;
+    color:white;
+    margin-top: 470px;
+    margin-left: 100px;
+    font-weight: 800;
+}
+.yellow {
+    color:yellow;
 }

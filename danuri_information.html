@@ -5,21 +5,59 @@
     <script src="danuri_JS.js"></script>
     <title>information</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
         body {
             background-image: url('danuri_look.jpg');
             background-size: cover;
             background-repeat: no-repeat;
         }
         #introduce {
+            font-family: 'Nanum Gothic', cursive;
             color: white;
-            font-size: 32px;
-            font-family: Inter;
-            font-weight: 350;
-            word-wrap: break-word;
-            margin-top: 550px;
+            font-size: 40px;
+            font-weight: 500;
+            line-height:1.6;
+            margin-top: 600px;
             margin-left: 100px;
         }
+        #loadingBox {
+            position: relative;
+        }
+        #dim {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+            
     </style>
+    <script>
+        var container = document.getElementById('loadingBox');
+        var image = document.getElementById('dim');
+
+        var centerX = container.offsetWidth / 2;
+        var centerY = container.offsetHeight / 2;
+        var radius = 100; // 반지름
+        var angle = 0; // 초기 각도
+
+        function animate() {
+        // 이미지의 위치 계산
+        var x = centerX + Math.cos(angle) * radius;
+        var y = centerY + Math.sin(angle) * radius;
+        
+        // 이미지 위치 설정
+        image.style.left = x + 'px';
+        image.style.top = y + 'px';
+        
+        // 각도 증가
+        angle += 0.01; // 적절한 속도 조절
+        
+        // 애니메이션 프레임 요청
+        requestAnimationFrame(animate);
+        }
+
+        // 애니메이션 시작
+        animate();
+    </script>
 </head>
 <body>
     <header>
@@ -36,5 +74,11 @@
           </div>
     </header>
     <div id="introduce">한국 최초 달 탐사선</div>
+    <div class="quick_area2">
+        <div id="loadingBox">
+            <div class="dim"><img class="danuri_ro" src=".vscode/danuriShip2.png" alt=""></div>     
+            <img id="back" src=".vscode/img_2.jpg" alt="">
+        </div>   
+    </div>
 </body>
 </html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+        }
+
+        #image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+    <img id="image" src="path/to/your/image.jpg" alt="Image">
+  </div>
+  <script>
+    var container = document.getElementById('container');
+    var image = document.getElementById('image');
+
+    var centerX = container.offsetWidth / 2;
+    var centerY = container.offsetHeight / 2;
+    var radius = 100; // 반지름
+    var angle = 0; // 초기 각도
+
+    function animate() {
+    // 이미지의 위치 계산
+    var x = centerX + Math.cos(angle) * radius;
+    var y = centerY + Math.sin(angle) * radius;
+    
+    // 이미지 위치 설정
+    image.style.left = x + 'px';
+    image.style.top = y + 'px';
+    
+    // 각도 증가
+    angle += 0.01; // 적절한 속도 조절
+    
+    // 애니메이션 프레임 요청
+    requestAnimationFrame(animate);
+    }
+
+    // 애니메이션 시작
+    animate();
+
+  </script>
+</body>
+</html>
+  
