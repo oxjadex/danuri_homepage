@@ -110,23 +110,48 @@ a {
     color: white;
     margin-bottom: 100px;
     position: relative;
-    left: 50px;
-    bottom: 30px;
+    left: 700px;
+    bottom: 60px;
 }
 #current-time {
     font-family: 'Nanum Gothic', cursive;
     font-size: 25px;
     color: white;
     position: relative;
-    left: 270px;
-    bottom: 158.5px;
+    left: 920px;
+    bottom: 188.5px;
 }
 #text {
+    font-family: 'Nanum Gothic', cursive;
+    font-size: 25px;
+    color: white;
+    position: relative;
+    left: 50px;
+    top: 65px;
+}
+#text1 {
     font-family: 'Nanum Gothic', cursive;
     font-size: 16px;
     color: #c1d7e9;
     margin-bottom: 100px;
     position: relative;
-    top: 50px;
-    left: 50px;
+    top: 20px;
+    left: 700px;
+}
+#text2 {
+    font-family: 'Nanum Gothic', cursive;
+    font-size: 16px;
+    color: #c1d7e9;
+    margin-bottom: 100px;
+    position: relative;
+    bottom: 256px;
+    left: 1180px;
+}
+#days-since {
+    font-family: 'Nanum Gothic', cursive;
+    font-size: 25px;
+    color: white;
+    position: relative;
+    left: 1180px;
+    bottom: 336.5px;
 }
