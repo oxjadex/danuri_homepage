@@ -26,8 +26,8 @@ body {
     top: 0px;
     position: absolute;
     background-color: rgba(0, 0, 0, 0);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4); /* 반투명한 흰색 테두리 설정 */
-    box-sizing: border-box; /* 테두리를 요소의 크기에 포함시키도록 설정 */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4); 
+    box-sizing: border-box; 
     z-index: auto;
 }
 
