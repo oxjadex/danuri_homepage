@@ -67,26 +67,21 @@
 
     var centerX = container.offsetWidth / 2 -25.5;
     var centerY = container.offsetHeight / 2 + 150;
-    var radius = 285; // 반지름
-    var angle = 0; // 초기 각도
+    var radius = 285;
+    var angle = 0;
 
     function animate() {
-    // 이미지의 위치 계산
     var x = centerX + Math.cos(angle) * radius;
     var y = centerY + Math.sin(angle) * radius;
     
-    // 이미지 위치 설정
     image.style.left = x + 'px';
     image.style.top = y + 'px';
     
-    // 각도 증가
-    angle += 0.01; // 적절한 속도 조절
+    angle += 0.01;
     
-    // 애니메이션 프레임 요청
     requestAnimationFrame(animate);
     }
 
-    // 애니메이션 시작
     animate();
 
   </script>
