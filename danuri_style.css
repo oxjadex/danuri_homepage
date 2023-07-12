@@ -98,11 +98,11 @@ a {
 }
 
 #bottombar {
-    margin-top: 40px;
+    margin-top: 50px;
     margin-left: 30px;
     background-color: rgba( 0, 0, 0, 0.5);
     height: 180px;
-    width: 1410px;
+    width: 1490px;
 }
 #current-date {
     font-family: 'Nanum Gothic', cursive;
