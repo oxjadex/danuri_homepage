@@ -1,13 +1,12 @@
-<!DOCTYPE html><!-----사진을 발사 달 이케 나눠가지고 오른쪽버튼 누르면 넘어간다음에 스크롤 해서 사진보기 미술관처럼 ㅋㅋ 개어렵겟다 시ㅏㄱㄴ나으면-->
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>information</title>
     <link rel="stylesheet" href="danuri_style.css">
-    <script src="danuri_JS.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
         body {
-            background-image: url('./images.png');
+            background-color:black;
             margin-top: 100px;
         }
         .image {
@@ -22,19 +21,23 @@
         body {
             display: flex;
         }
-        #step {
+        .section {
             float: left;
-        }
-        #near_moon {
-            float: left;
-        }
-        #moon {
-            float: left;
+            width: 100%;
+            display: none;
         }
         .title {
             font-family: 'Nanum Gothic', sans-serif;
             text-align: center;
             font-size: 32px;
+        }
+        .arrow {
+            cursor: pointer;
+            width: 5%;
+            height: 5%;
+        }
+        .arrow:hover {
+            content: url('./스크린샷 2023-07-12 093551.png');
         }
     </style>
 </head>
@@ -52,25 +55,42 @@
             </div>
         </div>
     </header>
-    <div id ="step">
-        <div class="title">발사 과정</div>
-        <hr>
+    <img class="arrow" src="./closeup-shot-of-the-moon-isolated-on-a-black-background-great-for-articles-about-space (1).jpg" alt="Next" onclick="nextSection()">
+    <div class="section" id="step">
         <img class="image" src="./20220805080246096_다누리를-탑재한-팔콘-9발사체.jpg" alt="Image">
         <img class="image" src="./20220805093202224_1659655604672.jpg" alt="Image">
         <img class="image" src="./20220805155941484_0805_1.jpg" alt="Image">
     </div>
-    <div id ="moon">
-        <div class="title">달</div>
-        <hr>
+    <div class="section" id="moon">
         <img class="image" src="./20221013162755865_0829_view페이지_이미지.jpg" alt="Image">
         <img class="image" src="./20230103162955382_(221231)_2022년-12월-31일-다누리가-달-상공-119km에서-촬영한-사진.jpg" alt="Image">
     </div>
-    <div id ="near_moon">
-        <div class="title">달 착륙</div>
-        <hr>
+    <div class="section" id="near_moon">
         <img class="image" src="./20230412121437436_3. 실라르드 엠 크레이터 전체 영상.jpg" alt="Image">
-        <img class="image" src="./20230412121320297_2. 슈뢰딩거 분지 전체 영상.jpg"" alt="Image">
+        <img class="image" src="./20230412121320297_2. 슈뢰딩거 분지 전체 영상.jpg" alt="Image">
         <img class="image" src="./20230412121518175_1. 치올콥스키 크레이터 전체 영상.jpg" alt="Image">
     </div>
+    <script>
+        var sections = document.querySelectorAll('.section');
+        var currentSectionIndex = 0;
+
+        function showSection(index) {
+            if (index >= 0 && index < sections.length) {
+                sections[currentSectionIndex].style.display = 'none';
+                sections[index].style.display = 'block';
+                currentSectionIndex = index;
+            }
+        }
+
+        showSection(currentSectionIndex);
+
+        function nextSection() {
+            if (currentSectionIndex < sections.length - 1) {
+                showSection(currentSectionIndex + 1);
+            } else {
+                showSection(0);
+            }
+        }
+    </script>
 </body>
 </html>
