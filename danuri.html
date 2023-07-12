@@ -22,10 +22,8 @@
             top: 0px;
             position: absolute, fixed;
         }
-
     </style>
     <link rel="stylesheet" href="danuri_style.css">
-    <script src="danuri_JS.js"></script>
 </head>
 <body>
     <header>
@@ -46,9 +44,12 @@
         <div class="white">140여일 간의 여정, 달과 조우하다</div>
     </div>
     <div id="bottombar">
-        <div id="text">현재 시간 GMT+0900 (한국 표준시)</div>
+        <div id="text"><b>달 궤도선 다누리 현재 상태</b></div>
+        <div id="text1">현재 시간 GMT+09:00 (한국 표준시)</div>
         <div id="current-date"></div>
         <div id="current-time"></div>
+        <div id="text2">임무 시간</div>
+        <div id="days-since"></div>
     </div>
     
     <script>
@@ -56,6 +57,7 @@
         function updateCurrentDateTime() {
             var currentDateElement = document.getElementById('current-date');
             var currentTimeElement = document.getElementById('current-time');
+            var daysSinceElement = document.getElementById('days-since');
             var currentDateTime = new Date();
             var year = currentDateTime.getFullYear();
             var month = currentDateTime.getMonth() + 1;
@@ -74,6 +76,14 @@
             // 현재 날짜와 시간을 요소에 설정
             currentDateElement.textContent = year + '년 ' + month + '월 ' + date + '일';
             currentTimeElement.textContent = hours + ':' + minutes + ':' + seconds;
+    
+            // 2022년 8월 4일과 현재 날짜의 차이 계산
+            var targetDate = new Date(2022, 7, 5); // 2022년 8월 4일
+            var timeDiff = currentDateTime.getTime() - targetDate.getTime();
+            var daysSince = Math.floor(timeDiff / (1000 * 60 * 60 * 24)); // 날짜 차이 계산
+    
+            // 날짜 차이를 요소에 출력
+            daysSinceElement.textContent = "+" + daysSince;
     
             // 1초마다 현재 시간 및 날짜 업데이트
             setTimeout(updateCurrentDateTime, 1000);
